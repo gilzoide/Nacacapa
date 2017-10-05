@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://Scripts/atirador.gd" type="Script" id=1]
+[ext_resource path="res://Imagens/seta.png" type="Texture" id=2]
+
+[node name="Atirador" type="Node2D"]
+
+z/z = 1
+script/script = ExtResource( 1 )
+velocidadeInicialBola = 100
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/rot = -90.0
+texture = ExtResource( 2 )
+
+[node name="Position2D" type="Position2D" parent="."]
+
+transform/pos = Vector2( -0.15086, 40.9443 )
+
+

@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://Scripts/pa.gd" type="Script" id=1]
+[ext_resource path="res://Imagens/raquete.png" type="Texture" id=2]
+
+
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[sub_resource type="SegmentShape2D" id=2]
+
+custom_solver_bias = 0.0
+a = Vector2( 119.845, 51.1846 )
+b = Vector2( -0.788275, 51.0159 )
+
+[sub_resource type="SegmentShape2D" id=3]
+
+custom_solver_bias = 0.0
+a = Vector2( 34.3786, -33.8155 )
+b = Vector2( 119.458, 50.9908 )
+
+[node name="Pa" type="KinematicBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 4.96505, 0, 0, 4.97743, -0.793753, 1.29542 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 3 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/2/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+velocidadeGiro = 5
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( 34.7386, 1.66479 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( -0.793753, 1.29542 )
+transform/scale = Vector2( 4.96505, 4.97743 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="CollisionShape2D 2" type="CollisionShape2D" parent="."]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 1
+
+[node name="CollisionShape2D 3" type="CollisionShape2D" parent="."]
+
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 2
+
+
