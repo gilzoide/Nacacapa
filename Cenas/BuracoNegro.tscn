@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=1]
+
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[sub_resource type="ColorRamp" id=2]
+
+offsets = FloatArray( 0, 0.473684, 1 )
+colors = ColorArray( 0.487427, 0, 0.515625, 1, 0.901165, 0, 1, 1, 0.594727, 0, 0.679688, 1 )
+
+[node name="BuracoNegro" type="Area2D"]
+
+input/pickable = true
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+space_override = 1
+gravity_point = true
+gravity_vec = Vector2( 0, 0 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Particles2D" type="Particles2D" parent="."]
+
+config/amount = 60
+config/lifetime = 2.0
+config/process_mode = 1
+params/direction = 90.0
+params/spread = 1000.0
+params/linear_velocity = 20.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 5.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 1.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+color/color = Color( 0.410156, 0, 0.403748, 1 )
+color/color_ramp = SubResource( 2 )
+
+

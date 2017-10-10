@@ -15,6 +15,7 @@ extends RigidBody2D
 
 export var raio = 20
 export var cor = Color(0, 0, 0)
+onready var quicou = get_node("SamplePlayer")
 
 func _ready():
 	get_node("CollisionShape2D").get_shape().set_radius(raio)
@@ -29,3 +30,7 @@ func impulsiona(r, velocidade):
 	var frente = Vector2(velocidade, 0).rotated(r)
 	set_mode(RigidBody2D.MODE_RIGID)
 	set_linear_velocity(frente)
+
+
+func _on_Quicou(body):
+	quicou.play("quicou")

@@ -13,8 +13,12 @@
 
 extends Node2D
 
-func _on_Area2D_body_enter( body ):
+func _on_Ganhou( body ):
+	get_node("UHUL").play()
 	get_node("PopupDialog").popup()
 
 func _on_Menu_pressed():
 	get_tree().change_scene("res://Cenas/Menu.tscn")
+
+func _on_Fase2_pressed():
+	get_tree().change_scene("res://Cenas/Fase2.tscn")
